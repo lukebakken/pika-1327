@@ -26,5 +26,5 @@ except KeyboardInterrupt:
     logger.info("CTRL-C caught, exiting!")
     # Gracefully close the connection
     connection.close()
-    # Loop until we're fully closed, will stop on its own
+    # Loop until we're fully closed. The on_close callback is required to stop the io loop
     connection.ioloop.start()
